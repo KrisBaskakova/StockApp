@@ -12,7 +12,7 @@
 		10ACA505295298030030C8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10ACA504295298030030C8C5 /* Assets.xcassets */; };
 		10ACA508295298030030C8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ACA506295298030030C8C5 /* LaunchScreen.storyboard */; };
 		10ACA5122952B62C0030C8C5 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA5112952B62C0030C8C5 /* MainModel.swift */; };
-		10ACA516295306340030C8C5 /* StockListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA515295306340030C8C5 /* StockListVC.swift */; };
+		10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA515295306340030C8C5 /* StockListViewController.swift */; };
 		10ACA518295309340030C8C5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA517295309340030C8C5 /* Constraints.swift */; };
 		10ACA51A29530D600030C8C5 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA51929530D600030C8C5 /* StockTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		10ACA507295298030030C8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10ACA509295298030030C8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10ACA5112952B62C0030C8C5 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		10ACA515295306340030C8C5 /* StockListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListVC.swift; sourceTree = "<group>"; };
+		10ACA515295306340030C8C5 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		10ACA517295309340030C8C5 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		10ACA51929530D600030C8C5 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +63,7 @@
 				10ACA4FB295298020030C8C5 /* AppDelegate.swift */,
 				10ACA4FD295298020030C8C5 /* SceneDelegate.swift */,
 				10ACA517295309340030C8C5 /* Constraints.swift */,
-				10ACA515295306340030C8C5 /* StockListVC.swift */,
+				10ACA515295306340030C8C5 /* StockListViewController.swift */,
 				10ACA51929530D600030C8C5 /* StockTableViewCell.swift */,
 				10ACA5112952B62C0030C8C5 /* MainModel.swift */,
 				10ACA504295298030030C8C5 /* Assets.xcassets */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10ACA4FC295298020030C8C5 /* AppDelegate.swift in Sources */,
-				10ACA516295306340030C8C5 /* StockListVC.swift in Sources */,
+				10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */,
 				10ACA51A29530D600030C8C5 /* StockTableViewCell.swift in Sources */,
 				10ACA5122952B62C0030C8C5 /* MainModel.swift in Sources */,
 				10ACA518295309340030C8C5 /* Constraints.swift in Sources */,

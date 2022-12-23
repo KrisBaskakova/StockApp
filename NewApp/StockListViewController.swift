@@ -7,25 +7,19 @@
 
 import UIKit
 
-class StockListVC: UIViewController {
+class StockListViewController: UIViewController {
   
   var tableView = UITableView()
   var stocks: [Stocks] = []
-  
-  struct Cells {
-    
-    static let StockCell = "StockCell"
-  }
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Stocks"
     stocks = fetchData()
-    tableView.register(StockTableViewCell.self, forCellReuseIdentifier: Cells.StockCell)
+    tableView.register(StockTableViewCell.self, forCellReuseIdentifier: "StockCell")
     configureTableView()
-    
   }
+  
   
   
   func configureTableView() {
@@ -42,12 +36,14 @@ class StockListVC: UIViewController {
   
 }
 
-extension StockListVC: UITableViewDelegate, UITableViewDataSource {
+
+extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.StockCell) as! StockTableViewCell
+  
+    let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell") as! StockTableViewCell
     let stock = stocks[indexPath.row]
     cell.set(stocks: stock)
+    
     
     return cell
   }
@@ -59,7 +55,7 @@ extension StockListVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-extension StockListVC {
+extension StockListViewController {
   
   private func fetchData() -> [Stocks] {
     let stock1 = Stocks(stockName: "Apple", companyIcon: Images.aaple)
@@ -73,5 +69,6 @@ extension StockListVC {
   }
   
 }
+
 
 

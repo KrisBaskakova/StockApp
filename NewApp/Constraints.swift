@@ -19,4 +19,10 @@ extension UIView {
     
   }
   
+  func cellElementsConstraints() {
+    
+    
+  }
+  
+  
 }
