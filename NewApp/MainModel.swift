@@ -7,30 +7,24 @@
 
 import UIKit
 
-
-
 struct StockCellModel {
   let stockName: String
   let companyName: String
-  let companyIcon: UIImage
+  let companyIcon: UIImage?
   let stockPrice: Double
   let dynamicPrice: Bool
   let favourite: Bool
 }
 
-
-struct Stocks {
+struct Stock {
   let stockName: String
   let companyIcon: UIImage
 }
 
-
 struct Images {
-  
   static let aaple = UIImage(named: "AAPL")!
   static let amazon = UIImage(named: "AMZN")!
   static let google = UIImage(named: "GOOGL")!
   static let yandex = UIImage(named: "YNDX")!
   static let star = UIImage(named: "Path")!
-  
 }
