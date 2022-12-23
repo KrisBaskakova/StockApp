@@ -15,6 +15,7 @@
 		10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA515295306340030C8C5 /* StockListViewController.swift */; };
 		10ACA518295309340030C8C5 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA517295309340030C8C5 /* Constraints.swift */; };
 		10ACA51A29530D600030C8C5 /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA51929530D600030C8C5 /* StockTableViewCell.swift */; };
+		10ACA51C295675550030C8C5 /* StockListViewControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA51B295675550030C8C5 /* StockListViewControllerHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		10ACA515295306340030C8C5 /* StockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewController.swift; sourceTree = "<group>"; };
 		10ACA517295309340030C8C5 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		10ACA51929530D600030C8C5 /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
+		10ACA51B295675550030C8C5 /* StockListViewControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewControllerHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,42 @@
 		10ACA4FA295298020030C8C5 /* NewApp */ = {
 			isa = PBXGroup;
 			children = (
-				10ACA4FB295298020030C8C5 /* AppDelegate.swift */,
-				10ACA4FD295298020030C8C5 /* SceneDelegate.swift */,
 				10ACA517295309340030C8C5 /* Constraints.swift */,
 				10ACA515295306340030C8C5 /* StockListViewController.swift */,
-				10ACA51929530D600030C8C5 /* StockTableViewCell.swift */,
-				10ACA5112952B62C0030C8C5 /* MainModel.swift */,
-				10ACA504295298030030C8C5 /* Assets.xcassets */,
-				10ACA506295298030030C8C5 /* LaunchScreen.storyboard */,
+				10ACA51F295677360030C8C5 /* TableViewCells */,
+				10ACA520295677430030C8C5 /* StockScreenMadel */,
+				10ACA51E295676F10030C8C5 /* Assistants */,
 				10ACA509295298030030C8C5 /* Info.plist */,
+				10ACA506295298030030C8C5 /* LaunchScreen.storyboard */,
 			);
 			path = NewApp;
+			sourceTree = "<group>";
+		};
+		10ACA51E295676F10030C8C5 /* Assistants */ = {
+			isa = PBXGroup;
+			children = (
+				10ACA4FB295298020030C8C5 /* AppDelegate.swift */,
+				10ACA504295298030030C8C5 /* Assets.xcassets */,
+				10ACA4FD295298020030C8C5 /* SceneDelegate.swift */,
+			);
+			path = Assistants;
+			sourceTree = "<group>";
+		};
+		10ACA51F295677360030C8C5 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				10ACA51929530D600030C8C5 /* StockTableViewCell.swift */,
+				10ACA51B295675550030C8C5 /* StockListViewControllerHeader.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		10ACA520295677430030C8C5 /* StockScreenMadel */ = {
+			isa = PBXGroup;
+			children = (
+				10ACA5112952B62C0030C8C5 /* MainModel.swift */,
+			);
+			path = StockScreenMadel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +173,7 @@
 				10ACA4FC295298020030C8C5 /* AppDelegate.swift in Sources */,
 				10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */,
 				10ACA51A29530D600030C8C5 /* StockTableViewCell.swift in Sources */,
+				10ACA51C295675550030C8C5 /* StockListViewControllerHeader.swift in Sources */,
 				10ACA5122952B62C0030C8C5 /* MainModel.swift in Sources */,
 				10ACA518295309340030C8C5 /* Constraints.swift in Sources */,
 				10ACA4FE295298020030C8C5 /* SceneDelegate.swift in Sources */,

@@ -12,7 +12,7 @@ final class StockTableViewCell: UITableViewCell {
   var priceOfStock = 4776.6
   var dynamicPrice = 55.5
   var persentageOfDymanic = 1.15
-  
+
   lazy var containerView = UIView()
   private lazy var stockNameLabel = UILabel()
   private lazy var companyIconImageView = UIImageView()
@@ -31,7 +31,7 @@ final class StockTableViewCell: UITableViewCell {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+ 
   func set(stock: Stock) {
    stockNameLabel.text = stock.stockName
    companyIconImageView.image = stock.companyIcon
@@ -95,7 +95,7 @@ final class StockTableViewCell: UITableViewCell {
   private func configureDynamicPriceLabel() {
     dynamicPriceLabel.text = "+\(dynamicPrice) P (\(persentageOfDymanic)%)"
     dynamicPriceLabel.font = .systemFont(ofSize: 12, weight: .medium)
-    dynamicPriceLabel.textColor = .green
+    dynamicPriceLabel.textColor = UIColor(red: 0.14, green: 0.7, blue: 0.364, alpha: 1)
   }
   
   //MARK: - Constraints
