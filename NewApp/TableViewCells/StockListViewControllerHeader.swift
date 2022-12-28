@@ -43,16 +43,14 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
     stockButton.setTitle("Stocks", for: .normal)
     stockButton.titleLabel?.font = .systemFont(ofSize: 28, weight: .bold)
     stockButton.setTitleColor(.black, for: .normal)
-    stockButton.backgroundColor = .green
   }
   
   private func configureFavouriteButton() {
     favouriteButton.setTitle("Favourite", for: .normal)
     favouriteButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-    favouriteButton.setTitleColor(.black, for: .normal)
-    favouriteButton.backgroundColor = .blue
+    favouriteButton.setTitleColor(.gray, for: .normal)
   }
-  
+ 
   private func setConstraints() {
     setStockButtonConstraints()
     setFavouriteButtonConstraints()
@@ -68,8 +66,9 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
   private func setFavouriteButtonConstraints() {
     favouriteButton.translatesAutoresizingMaskIntoConstraints = false
     favouriteButton.leadingAnchor.constraint(equalTo: stockButton.trailingAnchor, constant: 20).isActive = true
+    favouriteButton.bottomAnchor.constraint(equalTo: stockButton.bottomAnchor).isActive = true
   }
-  
+
 }
 
 //MARK: - Button actions
