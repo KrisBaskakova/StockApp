@@ -32,9 +32,9 @@ final class StockTableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
  
-  func set(stock: Stock) {
-   stockNameLabel.text = stock.stockName
-   companyIconImageView.image = stock.companyIcon
+  func set(model: StockModel) {
+   stockNameLabel.text = model.name
+   companyIconImageView.image = model.companyIcon
  }
   
   private func setupUI() {

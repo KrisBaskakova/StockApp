@@ -9,9 +9,12 @@ import UIKit
 
 class StockListViewControllerHeader: UITableViewHeaderFooterView {
   
+  lazy var whiteView = UIView()
   lazy var shadowView = UIView()
-   lazy var stockButton = UIButton()
+  lazy var stockButton = UIButton()
   private lazy var favouriteButton = UIButton()
+  
+  //MARK: - Init
   
   override init(reuseIdentifier: String?) {
     super.init(reuseIdentifier: reuseIdentifier)
@@ -24,6 +27,8 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  //MARK: - Setup UI
+  
   private func setupUI() {
     setupHierarchy()
     configuration()
@@ -34,16 +39,20 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
     addSubview(stockButton)
     addSubview(favouriteButton)
     addSubview(shadowView)
+    addSubview(whiteView)
   }
   
   private func configuration() {
     configureStockButton()
     configureFavouriteButton()
-    configureShadowView()
+    configureWhiteView()
   }
   
-  private func configureShadowView() {
-    
+  //MARK: - Configuration
+  
+  private func configureWhiteView() {
+    whiteView.backgroundColor = .white
+    whiteView.isHidden = true
   }
   
   private func configureStockButton() {
@@ -58,10 +67,20 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
     favouriteButton.setTitleColor(.gray, for: .normal)
   }
  
+  //MARK: - Constraints
+  
   private func setConstraints() {
     setStockButtonConstraints()
     setFavouriteButtonConstraints()
     setShadowViewConstraints()
+    setWhiteViewConstraints()
+  }
+  
+  private func setWhiteViewConstraints() {
+    whiteView.translatesAutoresizingMaskIntoConstraints = false
+    whiteView.bottomAnchor.constraint(equalTo: stockButton.topAnchor, constant: 0).isActive = true
+    whiteView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    whiteView.widthAnchor.constraint(equalToConstant: 800).isActive = true
   }
   
   private func setShadowViewConstraints() {

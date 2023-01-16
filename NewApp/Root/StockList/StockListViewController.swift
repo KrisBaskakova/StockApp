@@ -16,22 +16,25 @@ final class StockListViewController: UIViewController {
   
   var tableViewModel: [StocksListTableViewSectionType] = [.search, .stocks]
   
+  private lazy var whiteView = UIView()
   private lazy var tableView = UITableView()
-  private lazy var stocks: [Stock] = []
+ 
   private var lastContentOffset: CGFloat = 0
   
   //MARK: - Init
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    stocks = fetchData()
+    registerCells()
+    configureTableView()
+  }
+  
+  private func registerCells() {
     tableView.separatorStyle = .none
     tableView.register(StockTableViewCell.self, forCellReuseIdentifier: "StockCell")
     tableView.register(StockListViewControllerHeader.self,         forHeaderFooterViewReuseIdentifier: "TableViewHeader")
     tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchCell")
-    configureTableView()
   }
-  
   
   func showSearchViewController() {
     let viewController = SearchViewController()
@@ -75,9 +78,10 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
       return cell
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell") as! StockTableViewCell
-      let stock = stocks[indexPath.row]
-      cell.set(stock: stock)
+      //let stock = stocks[indexPath.row]
+      //cell.set(stock: stock)
       cell.selectionStyle = .none
+       
       
       if indexPath.row % 2 == 0 {
         cell.containerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -90,6 +94,11 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     }
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //let stockDetailViewController = StockDetailViewController(stockModel: )
+    //self.navigationController?.pushViewController(stockDetailViewController, animated: true)
+  }
+  
   func tableView(
     _ tableView: UITableView,
     numberOfRowsInSection section: Int
@@ -97,58 +106,40 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     
     switch section {
     case 0: return 1
-    case 1: return stocks.count
+    case 1: return 0
     default:
       assertionFailure()
       return 0
     }
   }
 
-  //pushing up
-  func tableView(_ tableView: UITableView,
-                 didEndDisplayingHeaderView view: UIView,
-                 forSection section: Int) {
-
-      //lets ensure there are visible rows.  Safety first!
-      guard let pathsForVisibleRows = tableView.indexPathsForVisibleRows,
-          let lastPath = pathsForVisibleRows.last else { return }
-
-      //compare the section for the header that just disappeared to the section
-      //for the bottom-most cell in the table view
-      if lastPath.section >= section {
-          print("test the next header is stuck to the top")
-      }
-
-  }
+  
+  //MARK: - ScrollView
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
+    var currentPosition: CGFloat = 0.0
+    let header = tableView.headerView(forSection: 1) as? StockListViewControllerHeader
+    
     if let tableView = scrollView as? UITableView {
-      
-
-
-    let firstCount = tableView.headerView(forSection: 1)?.frame.origin.y
-
-      
+      currentPosition = tableView.headerView(forSection: 1)?.frame.origin.y ?? 0.0
     }
     
+    if currentPosition > 120.0 {
+      header?.shadowView.backgroundColor = .white
+      header?.shadowView.layer.shadowColor = UIColor.red.cgColor
+      header?.shadowView.layer.shadowRadius = 9
+      header?.shadowView.layer.shadowOpacity = 0.7
+      header?.shadowView.layer.shadowOffset = CGSize(width: 3, height: 3)
+      header?.whiteView.isHidden = false
+    }
+    else {
+      header?.shadowView.layer.shadowColor = UIColor.white.cgColor
+      header?.whiteView.isHidden = true
+    }
   }
 
-  //pulling down
-  func tableView(_ tableView: UITableView,
-                 willDisplayHeaderView view: UIView,
-                 forSection section: Int) {
-
-      //lets ensure there are visible rows.  Safety first!
-      guard let pathsForVisibleRows = tableView.indexPathsForVisibleRows,
-          let firstPath = pathsForVisibleRows.first else { return }
-
-      //compare the section for the header that just appeared to the section
-      //for the top-most cell in the table view
-      if firstPath.section == section {
-          print("test the previous header is stuck to the top")
-      }
-  }
+  //MARK: - Header
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     switch section {
@@ -183,21 +174,5 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     case .stocks:
       return 40
     }
-  }
-}
-
-
-
-extension StockListViewController {
-  
-  private func fetchData() -> [Stock] {
-    let stock1 = Stock(stockName: "Apple", companyIcon: Images.aaple)
-    let stock2 = Stock(stockName: "Amazon", companyIcon: Images.amazon)
-    let stock3 = Stock(stockName: "Google", companyIcon: Images.google)
-    let stock4 = Stock(stockName: "Yandex", companyIcon: Images.yandex)
-    let stock5 = Stock(stockName: "Star", companyIcon: Images.star)
-    
-    return [stock1, stock2, stock3, stock4, stock5, stock1, stock2, stock3, stock4, stock5, stock1, stock2, stock3, stock4, stock5, stock1, stock2, stock3, stock4, stock5, stock1, stock2, stock3, stock4, stock5, stock1, stock2, stock3, stock4, stock5]
-    
   }
 }

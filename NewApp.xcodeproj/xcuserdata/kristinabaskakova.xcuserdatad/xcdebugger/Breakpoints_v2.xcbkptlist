@@ -46,8 +46,8 @@
             filePath = "NewApp/StockListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
             <Locations>
