@@ -18,6 +18,8 @@
 		10ACA51C295675550030C8C5 /* StockListViewControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA51B295675550030C8C5 /* StockListViewControllerHeader.swift */; };
 		10ACA522295AE7310030C8C5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA521295AE7310030C8C5 /* SearchView.swift */; };
 		10ACA524295AED530030C8C5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA523295AED530030C8C5 /* SearchTableViewCell.swift */; };
+		10ACA526295D78480030C8C5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA525295D78480030C8C5 /* SearchViewController.swift */; };
+		10ACA52B295D818B0030C8C5 /* Collection + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA52A295D818B0030C8C5 /* Collection + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		10ACA51B295675550030C8C5 /* StockListViewControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewControllerHeader.swift; sourceTree = "<group>"; };
 		10ACA521295AE7310030C8C5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		10ACA523295AED530030C8C5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		10ACA525295D78480030C8C5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		10ACA52A295D818B0030C8C5 /* Collection + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,12 @@
 			children = (
 				10ACA517295309340030C8C5 /* Constraints.swift */,
 				10ACA515295306340030C8C5 /* StockListViewController.swift */,
+				10ACA525295D78480030C8C5 /* SearchViewController.swift */,
 				10ACA521295AE7310030C8C5 /* SearchView.swift */,
 				10ACA51F295677360030C8C5 /* TableViewCells */,
 				10ACA520295677430030C8C5 /* StockScreenMadel */,
 				10ACA51E295676F10030C8C5 /* Assistants */,
+				10ACA527295D810A0030C8C5 /* Extensions */,
 				10ACA509295298030030C8C5 /* Info.plist */,
 				10ACA506295298030030C8C5 /* LaunchScreen.storyboard */,
 			);
@@ -104,6 +110,14 @@
 				10ACA5112952B62C0030C8C5 /* MainModel.swift */,
 			);
 			path = StockScreenMadel;
+			sourceTree = "<group>";
+		};
+		10ACA527295D810A0030C8C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10ACA52A295D818B0030C8C5 /* Collection + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10ACA526295D78480030C8C5 /* SearchViewController.swift in Sources */,
 				10ACA524295AED530030C8C5 /* SearchTableViewCell.swift in Sources */,
+				10ACA52B295D818B0030C8C5 /* Collection + Extension.swift in Sources */,
 				10ACA4FC295298020030C8C5 /* AppDelegate.swift in Sources */,
 				10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */,
 				10ACA51A29530D600030C8C5 /* StockTableViewCell.swift in Sources */,

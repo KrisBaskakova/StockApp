@@ -12,6 +12,8 @@ class SearchTableViewCell: UITableViewCell {
   lazy var searchView = SearchView()
   lazy var searchButton = UIButton()
   
+  var didTapToSearchButtonClosure: (() -> Void)? = nil
+  
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupUI()
@@ -56,7 +58,6 @@ class SearchTableViewCell: UITableViewCell {
 extension SearchTableViewCell {
   
   @objc func searchButtonWasTapped() {
-    searchView.findLabel.text = "Button pressed"
-    print("Pressed")
+    didTapToSearchButtonClosure?()
   }
 }

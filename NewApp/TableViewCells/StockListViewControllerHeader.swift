@@ -9,7 +9,8 @@ import UIKit
 
 class StockListViewControllerHeader: UITableViewHeaderFooterView {
   
-  private lazy var stockButton = UIButton()
+  lazy var shadowView = UIView()
+   lazy var stockButton = UIButton()
   private lazy var favouriteButton = UIButton()
   
   override init(reuseIdentifier: String?) {
@@ -32,11 +33,17 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
   private func setupHierarchy() {
     addSubview(stockButton)
     addSubview(favouriteButton)
+    addSubview(shadowView)
   }
   
   private func configuration() {
     configureStockButton()
     configureFavouriteButton()
+    configureShadowView()
+  }
+  
+  private func configureShadowView() {
+    
   }
   
   private func configureStockButton() {
@@ -54,6 +61,15 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
   private func setConstraints() {
     setStockButtonConstraints()
     setFavouriteButtonConstraints()
+    setShadowViewConstraints()
+  }
+  
+  private func setShadowViewConstraints() {
+    shadowView.translatesAutoresizingMaskIntoConstraints = false
+    shadowView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+    shadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+    shadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+    shadowView.heightAnchor.constraint(equalToConstant: 4).isActive = true
   }
   
   private func setStockButtonConstraints() {
