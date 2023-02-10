@@ -8,10 +8,6 @@
 import UIKit
 
 final class StockTableViewCell: UITableViewCell {
-  
-  var priceOfStock = 4776.6
-  var dynamicPrice = 55.5
-  var persentageOfDymanic = 1.15
 
   lazy var containerView = UIView()
   private lazy var stockNameLabel = UILabel()
@@ -33,9 +29,12 @@ final class StockTableViewCell: UITableViewCell {
   }
  
   func set(model: StockModel) {
-   stockNameLabel.text = model.name
-   companyIconImageView.image = model.companyIcon
- }
+    stockNameLabel.text = model.name
+    companyIconImageView.image = model.companyIcon
+    stockPriceLabel.text = "\(model.price)"
+    dynamicPriceLabel.text = "+\(model.dynamicPrice) P void %"
+    companyNameLabel.text = model.companyName
+  }
   
   private func setupUI() {
     setupConfiguration()
@@ -74,12 +73,10 @@ final class StockTableViewCell: UITableViewCell {
   }
   
   private func configureCompanyNameLabel() {
-    companyNameLabel.text = "Alphabet Class A"
     companyNameLabel.font = .systemFont(ofSize: 11, weight: .thin)
   }
   
   private func configureStockPriceLabel() {
-    stockPriceLabel.text = "\(priceOfStock)"
     stockPriceLabel.font = .systemFont(ofSize: 18, weight: .bold)
   }
   
@@ -93,7 +90,6 @@ final class StockTableViewCell: UITableViewCell {
   }
   
   private func configureDynamicPriceLabel() {
-    dynamicPriceLabel.text = "+\(dynamicPrice) P (\(persentageOfDymanic)%)"
     dynamicPriceLabel.font = .systemFont(ofSize: 12, weight: .medium)
     dynamicPriceLabel.textColor = UIColor(red: 0.14, green: 0.7, blue: 0.364, alpha: 1)
   }

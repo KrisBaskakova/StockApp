@@ -12,6 +12,8 @@ class StockDetailViewController: UIViewController {
   lazy var backButton = UIButton()
   lazy var favouriteButton = UIButton()
   lazy var buyButton = UIButton()
+  private lazy var stockNameLabel = UILabel()
+  private lazy var companyNameLabel = UILabel()
   let stockModel: StockModel
   
   init(stockModel: StockModel) {
@@ -28,6 +30,7 @@ class StockDetailViewController: UIViewController {
     setupUI()
     buttonsAction()
     view.backgroundColor = .white
+
   }
   
   //MARK: - Button actions
@@ -56,6 +59,8 @@ class StockDetailViewController: UIViewController {
   }
   
   private func setupHeirarchy() {
+    view.addSubview(stockNameLabel)
+    view.addSubview(companyNameLabel)
     view.addSubview(backButton)
     view.addSubview(favouriteButton)
     view.addSubview(buyButton)
@@ -67,7 +72,21 @@ class StockDetailViewController: UIViewController {
     setupBackButtonConfiguration()
     setupFavouriteButtonConfiguration()
     setupBuyButtonConfiguration()
+    setupStockNameLabelConfiguration()
+    setupCompanyNameLabelConfiguration()
   }
+  
+  private func setupStockNameLabelConfiguration(){
+    stockNameLabel.text = stockModel.name
+    stockNameLabel.font = .systemFont(ofSize: 18, weight: .bold)
+  }
+  
+  private func setupCompanyNameLabelConfiguration(){
+    companyNameLabel.text = stockModel.companyName
+    companyNameLabel.font = .systemFont(ofSize: 12, weight: .regular)
+    companyNameLabel.textAlignment = .center
+  }
+  
   private func setupBuyButtonConfiguration() {
     buyButton.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
     buyButton.layer.cornerRadius = 16
@@ -89,9 +108,25 @@ class StockDetailViewController: UIViewController {
   
   private func setupConstraints() {
     setupBackbuttonConstrains()
+    setupStockNameLabelConstraints()
     setupFavouriteButtonConstraints()
     setupBuyButtonConstraints()
     setupBuyButtonConstraints()
+    setupCompanyNameLabelConstraints()
+  }
+
+  private func setupStockNameLabelConstraints(){
+    stockNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    stockNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+    stockNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    stockNameLabel.widthAnchor.constraint(equalToConstant: 52).isActive = true
+  }
+  
+  private func setupCompanyNameLabelConstraints(){
+    companyNameLabel.translatesAutoresizingMaskIntoConstraints = false
+    companyNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    companyNameLabel.widthAnchor.constraint(equalToConstant: 62).isActive = true
+    companyNameLabel.topAnchor.constraint(equalTo: stockNameLabel.bottomAnchor, constant: 4).isActive = true
   }
   
   private func setupBuyButtonConstraints() {

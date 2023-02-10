@@ -9,24 +9,50 @@ import UIKit
 
 final class StockListViewController: UIViewController {
   
+  weak var stockListPresenter: stockListPresenterProtocol!
+  
+  private let networkService = NetworkService()
+  
   enum StocksListTableViewSectionType {
     case search
     case stocks
   }
   
   var tableViewModel: [StocksListTableViewSectionType] = [.search, .stocks]
+  var stocks: [StockModel] = []
   
+  private lazy var activityIndicator = UIActivityIndicatorView()
   private lazy var whiteView = UIView()
   private lazy var tableView = UITableView()
  
   private var lastContentOffset: CGFloat = 0
   
-  //MARK: - Init
+  //MARK: - Init and UI
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    registerCells()
-    configureTableView()
+    
+    view.backgroundColor = .white
+    setupActivityIndicator()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+      let stocks = self.networkService.getStocks()
+      self.activityIndicator.stopAnimating()
+      self.activityIndicator.isHidden = true
+      self.stocks = stocks
+      self.registerCells()
+      self.configureTableView()
+    }
+  }
+  
+  private func setupActivityIndicator() {
+    view.addSubview(activityIndicator)
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    activityIndicator.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    activityIndicator.widthAnchor.constraint(equalToConstant: 44).isActive = true
+    activityIndicator.startAnimating()
   }
   
   private func registerCells() {
@@ -78,11 +104,10 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
       return cell
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell") as! StockTableViewCell
-      //let stock = stocks[indexPath.row]
-      //cell.set(stock: stock)
+      let stock = stocks[indexPath.row]
+      cell.set(model: stock)
       cell.selectionStyle = .none
        
-      
       if indexPath.row % 2 == 0 {
         cell.containerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
       } else {
@@ -94,9 +119,11 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     }
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //let stockDetailViewController = StockDetailViewController(stockModel: )
-    //self.navigationController?.pushViewController(stockDetailViewController, animated: true)
+  func tableView(_ tableView: UITableView,
+                 didSelectRowAt indexPath: IndexPath
+  ) {
+    let stockDetailViewController = StockDetailViewController(stockModel: stocks[indexPath.row])
+    self.navigationController?.pushViewController(stockDetailViewController, animated: true)
   }
   
   func tableView(
@@ -106,7 +133,7 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     
     switch section {
     case 0: return 1
-    case 1: return 0
+    case 1: return stocks.count
     default:
       assertionFailure()
       return 0
@@ -127,7 +154,7 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     
     if currentPosition > 120.0 {
       header?.shadowView.backgroundColor = .white
-      header?.shadowView.layer.shadowColor = UIColor.red.cgColor
+      header?.shadowView.layer.shadowColor = UIColor.black.cgColor
       header?.shadowView.layer.shadowRadius = 9
       header?.shadowView.layer.shadowOpacity = 0.7
       header?.shadowView.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -175,4 +202,12 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
       return 40
     }
   }
+}
+
+// MARK: - View extention
+extension StockListViewController: stockListViewProtocol {
+  func testAction() {
+    print("ff")
+  }
+  
 }

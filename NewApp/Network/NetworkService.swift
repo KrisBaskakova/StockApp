@@ -20,7 +20,11 @@ final class NetworkService {
     return stocks
     
   }
-  
+//  
+//  func getCurrentStock(ticket: String) -> [...] {
+//    
+//  }
+ 
 }
 
 private let data: [StockModel] = [
