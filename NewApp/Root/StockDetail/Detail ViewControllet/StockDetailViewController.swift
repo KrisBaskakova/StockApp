@@ -8,13 +8,32 @@
 import UIKit
 
 class StockDetailViewController: UIViewController {
+
   
   lazy var backButton = UIButton()
   lazy var favouriteButton = UIButton()
   lazy var buyButton = UIButton()
   private lazy var stockNameLabel = UILabel()
   private lazy var companyNameLabel = UILabel()
+  var details: [DetailsModel] = []
   let stockModel: StockModel
+  let detailsTypeColleactionViewIdentifire = "detailsTypeColleactionView"
+  let detailsTypeColleactionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    let detailsTypeColleactionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    detailsTypeColleactionView.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: "detailsTypeColleactionView")
+    
+    return detailsTypeColleactionView
+  }()
+  let cellData: [StockDetail] = [
+    .chart,
+    .summary,
+    .news,
+    .ideas,
+    .forecast,
+  ]
+  
   
   init(stockModel: StockModel) {
     self.stockModel = stockModel
@@ -29,8 +48,8 @@ class StockDetailViewController: UIViewController {
     super.viewDidLoad()
     setupUI()
     buttonsAction()
+    setCollectionViewDelegates()
     view.backgroundColor = .white
-
   }
   
   //MARK: - Button actions
@@ -52,10 +71,17 @@ class StockDetailViewController: UIViewController {
     favouriteButton.setImage(UIImage(named: "goldStar"), for: .normal)
   }
   
+  // MARK: - UI settings
+  
   private func setupUI() {
     setupHeirarchy()
     setupConfiguration()
     setupConstraints()
+  }
+  
+  private func setCollectionViewDelegates() {
+    detailsTypeColleactionView.delegate = self
+    detailsTypeColleactionView.dataSource = self
   }
   
   private func setupHeirarchy() {
@@ -64,6 +90,7 @@ class StockDetailViewController: UIViewController {
     view.addSubview(backButton)
     view.addSubview(favouriteButton)
     view.addSubview(buyButton)
+    view.addSubview(detailsTypeColleactionView)
   }
   
   //MARK: - Configuration
@@ -79,6 +106,8 @@ class StockDetailViewController: UIViewController {
   private func setupStockNameLabelConfiguration(){
     stockNameLabel.text = stockModel.name
     stockNameLabel.font = .systemFont(ofSize: 18, weight: .bold)
+    stockNameLabel.textAlignment = .center
+    stockNameLabel.numberOfLines = 0
   }
   
   private func setupCompanyNameLabelConfiguration(){
@@ -113,13 +142,13 @@ class StockDetailViewController: UIViewController {
     setupBuyButtonConstraints()
     setupBuyButtonConstraints()
     setupCompanyNameLabelConstraints()
+    setupDetailsTypeStackViewConstraints()
   }
 
   private func setupStockNameLabelConstraints(){
     stockNameLabel.translatesAutoresizingMaskIntoConstraints = false
-    stockNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+    stockNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
     stockNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    stockNameLabel.widthAnchor.constraint(equalToConstant: 52).isActive = true
   }
   
   private func setupCompanyNameLabelConstraints(){
@@ -127,6 +156,14 @@ class StockDetailViewController: UIViewController {
     companyNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     companyNameLabel.widthAnchor.constraint(equalToConstant: 62).isActive = true
     companyNameLabel.topAnchor.constraint(equalTo: stockNameLabel.bottomAnchor, constant: 4).isActive = true
+  }
+  
+  private func setupDetailsTypeStackViewConstraints() {
+    detailsTypeColleactionView.translatesAutoresizingMaskIntoConstraints = false
+    detailsTypeColleactionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 108).isActive = true
+    detailsTypeColleactionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    detailsTypeColleactionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    detailsTypeColleactionView.heightAnchor.constraint(equalToConstant: 25).isActive = true
   }
   
   private func setupBuyButtonConstraints() {
@@ -152,5 +189,35 @@ class StockDetailViewController: UIViewController {
     backButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
     backButton.heightAnchor.constraint(equalToConstant: 14).isActive = true
   }
+  
+}
+
+//MARK: - CollectionView Extension
+
+extension StockDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+  
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    return CGSize(width: collectionView.bounds.width - 50, height: 40)
+//  }
+  
+  
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return cellData.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsTypeColleactionView", for: indexPath) as! DetailCollectionViewCell
+    
+    cell.configure(with: cellData[indexPath.row])
+    cell.backgroundColor = .cyan
+    cell.layer.borderWidth = 1
+    
+        return cell
+    
+  }
+  
+  
   
 }

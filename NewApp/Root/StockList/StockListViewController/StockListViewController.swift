@@ -35,7 +35,7 @@ final class StockListViewController: UIViewController {
     view.backgroundColor = .white
     setupActivityIndicator()
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       let stocks = self.networkService.getStocks()
       self.activityIndicator.stopAnimating()
       self.activityIndicator.isHidden = true
@@ -151,7 +151,7 @@ extension StockListViewController: UITableViewDelegate, UITableViewDataSource {
     if let tableView = scrollView as? UITableView {
       currentPosition = tableView.headerView(forSection: 1)?.frame.origin.y ?? 0.0
     }
-    
+   
     if currentPosition > 120.0 {
       header?.shadowView.backgroundColor = .white
       header?.shadowView.layer.shadowColor = UIColor.black.cgColor

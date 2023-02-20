@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1087129A2995F297007A157C /* StockListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108712992995F297007A157C /* StockListPresenter.swift */; };
+		108712A02996D7B6007A157C /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1087129F2996D7B6007A157C /* DetailCollectionViewCell.swift */; };
+		108712A529971984007A157C /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108712A429971984007A157C /* DetailModel.swift */; };
 		10ACA4FC295298020030C8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA4FB295298020030C8C5 /* AppDelegate.swift */; };
 		10ACA4FE295298020030C8C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ACA4FD295298020030C8C5 /* SceneDelegate.swift */; };
 		10ACA505295298030030C8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10ACA504295298030030C8C5 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		108712992995F297007A157C /* StockListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListPresenter.swift; sourceTree = "<group>"; };
+		1087129F2996D7B6007A157C /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		108712A429971984007A157C /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		10ACA4F8295298020030C8C5 /* NewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ACA4FB295298020030C8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10ACA4FD295298020030C8C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,23 @@
 				108712992995F297007A157C /* StockListPresenter.swift */,
 			);
 			path = StockListPresenter;
+			sourceTree = "<group>";
+		};
+		108712A12996D80B007A157C /* Detail ViewControllet */ = {
+			isa = PBXGroup;
+			children = (
+				10ACA52C2974E2AB0030C8C5 /* StockDetailViewController.swift */,
+			);
+			path = "Detail ViewControllet";
+			sourceTree = "<group>";
+		};
+		108712A32996D826007A157C /* Detail CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1087129F2996D7B6007A157C /* DetailCollectionViewCell.swift */,
+				108712A429971984007A157C /* DetailModel.swift */,
+			);
+			path = "Detail CollectionView Cell";
 			sourceTree = "<group>";
 		};
 		10ACA4EF295298020030C8C5 = {
@@ -183,7 +204,8 @@
 		10ACA53329754C3C0030C8C5 /* StockDetail */ = {
 			isa = PBXGroup;
 			children = (
-				10ACA52C2974E2AB0030C8C5 /* StockDetailViewController.swift */,
+				108712A12996D80B007A157C /* Detail ViewControllet */,
+				108712A32996D826007A157C /* Detail CollectionView Cell */,
 			);
 			path = StockDetail;
 			sourceTree = "<group>";
@@ -269,6 +291,7 @@
 				10ACA526295D78480030C8C5 /* SearchViewController.swift in Sources */,
 				10ACA53529754CC50030C8C5 /* ImageFabric.swift in Sources */,
 				10ACA524295AED530030C8C5 /* SearchTableViewCell.swift in Sources */,
+				108712A02996D7B6007A157C /* DetailCollectionViewCell.swift in Sources */,
 				10ACA52B295D818B0030C8C5 /* Collection + Extension.swift in Sources */,
 				10ACA4FC295298020030C8C5 /* AppDelegate.swift in Sources */,
 				10ACA516295306340030C8C5 /* StockListViewController.swift in Sources */,
@@ -279,6 +302,7 @@
 				10ACA51C295675550030C8C5 /* StockListViewControllerHeader.swift in Sources */,
 				10ACA522295AE7310030C8C5 /* SearchView.swift in Sources */,
 				10ACA5122952B62C0030C8C5 /* StockModel.swift in Sources */,
+				108712A529971984007A157C /* DetailModel.swift in Sources */,
 				10ACA518295309340030C8C5 /* UIView + layout.swift in Sources */,
 				10ACA4FE295298020030C8C5 /* SceneDelegate.swift in Sources */,
 			);

@@ -84,5 +84,84 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "cellData"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 4c944d2f4c0bcf76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.cellData.getter : Swift.Array&lt;NewApp.DetailsModel&gt;"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 1843fe98bbc57b1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.init(stockModel: NewApp.StockModel) -&gt; NewApp.StockDetailViewController"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "404">
+               </Location>
+               <Location
+                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 15206737c3e4b8d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;NewApp.StockDetailViewController&gt;"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "420">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7BAB6106-8204-43F4-BAAD-F559F4789A39"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
