@@ -9,8 +9,12 @@ import UIKit
 
 class StockListViewControllerHeader: UITableViewHeaderFooterView {
   
-  private lazy var stockButton = UIButton()
+  lazy var whiteView = UIView()
+  lazy var shadowView = UIView()
+  lazy var stockButton = UIButton()
   private lazy var favouriteButton = UIButton()
+  
+  //MARK: - Init
   
   override init(reuseIdentifier: String?) {
     super.init(reuseIdentifier: reuseIdentifier)
@@ -23,6 +27,8 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  //MARK: - Setup UI
+  
   private func setupUI() {
     setupHierarchy()
     configuration()
@@ -32,30 +38,57 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
   private func setupHierarchy() {
     addSubview(stockButton)
     addSubview(favouriteButton)
+    addSubview(shadowView)
+    addSubview(whiteView)
   }
   
   private func configuration() {
     configureStockButton()
     configureFavouriteButton()
+    configureWhiteView()
+  }
+  
+  //MARK: - Configuration
+  
+  private func configureWhiteView() {
+    whiteView.backgroundColor = .white
+    whiteView.isHidden = true
   }
   
   private func configureStockButton() {
     stockButton.setTitle("Stocks", for: .normal)
     stockButton.titleLabel?.font = .systemFont(ofSize: 28, weight: .bold)
     stockButton.setTitleColor(.black, for: .normal)
-    stockButton.backgroundColor = .green
   }
   
   private func configureFavouriteButton() {
     favouriteButton.setTitle("Favourite", for: .normal)
     favouriteButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-    favouriteButton.setTitleColor(.black, for: .normal)
-    favouriteButton.backgroundColor = .blue
+    favouriteButton.setTitleColor(.gray, for: .normal)
   }
+ 
+  //MARK: - Constraints
   
   private func setConstraints() {
     setStockButtonConstraints()
     setFavouriteButtonConstraints()
+    setShadowViewConstraints()
+    setWhiteViewConstraints()
+  }
+  
+  private func setWhiteViewConstraints() {
+    whiteView.translatesAutoresizingMaskIntoConstraints = false
+    whiteView.bottomAnchor.constraint(equalTo: stockButton.topAnchor, constant: 0).isActive = true
+    whiteView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    whiteView.widthAnchor.constraint(equalToConstant: 800).isActive = true
+  }
+  
+  private func setShadowViewConstraints() {
+    shadowView.translatesAutoresizingMaskIntoConstraints = false
+    shadowView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+    shadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+    shadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
+    shadowView.heightAnchor.constraint(equalToConstant: 4).isActive = true
   }
   
   private func setStockButtonConstraints() {
@@ -68,8 +101,9 @@ class StockListViewControllerHeader: UITableViewHeaderFooterView {
   private func setFavouriteButtonConstraints() {
     favouriteButton.translatesAutoresizingMaskIntoConstraints = false
     favouriteButton.leadingAnchor.constraint(equalTo: stockButton.trailingAnchor, constant: 20).isActive = true
+    favouriteButton.bottomAnchor.constraint(equalTo: stockButton.bottomAnchor).isActive = true
   }
-  
+
 }
 
 //MARK: - Button actions
