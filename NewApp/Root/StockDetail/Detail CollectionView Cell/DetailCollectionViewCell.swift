@@ -16,7 +16,6 @@ final class DetailCollectionViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupUI()
-    title.text = "trst"
   }
   
   required init?(coder: NSCoder) {

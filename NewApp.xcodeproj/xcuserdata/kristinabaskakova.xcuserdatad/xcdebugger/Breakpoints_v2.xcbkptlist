@@ -87,35 +87,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7"
+            uuid = "7BAB6106-8204-43F4-BAAD-F559F4789A39"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "cellData"
-            landmarkType = "24">
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "StockDetailViewController"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 4c944d2f4c0bcf76"
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - 6785563bd9cb62b3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NewApp.StockDetailViewController.cellData.getter : Swift.Array&lt;NewApp.DetailsModel&gt;"
+                  symbolName = "NewApp.StockDetailViewController.backButton.getter : __C.UIButton"
                   moduleName = "NewApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "164">
                </Location>
                <Location
-                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 1843fe98bbc57b1f"
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - b667389f368e529f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.backButton.setter : __C.UIButton"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - 7ff23407aa06e6aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.backButton.modify : __C.UIButton"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - d1df7956ff1af518"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewApp.StockDetailViewController.backButton.modify : __C.UIButton with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "NewApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - 1843fe98bbc5750e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,12 +186,12 @@
                   urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "404">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "132">
                </Location>
                <Location
-                  uuid = "1D6445BF-7BB6-4411-9005-ACF217B942A7 - 15206737c3e4b8d6"
+                  uuid = "18F06343-B3E7-4EA1-9C35-62AFFB68EC48 - 15206737c3e4b6c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -140,9 +201,9 @@
                   urlString = "file:///Users/kristinabaskakova/Desktop/NewApp/NewApp/Root/StockDetail/Detail%20ViewControllet/StockDetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "420">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "144">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -150,16 +211,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7BAB6106-8204-43F4-BAAD-F559F4789A39"
+            uuid = "680F9B1A-C67A-48F1-92AB-6ADAE1ED8A5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "backButtonWasTapped()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5BB4138-4637-4A68-A384-C5F737EE4DF6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "setupHeirarchy()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E1EA053-6E3B-421B-9A52-2F187F5A8B16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "setupConfiguration()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9942401B-0C85-4782-85D1-232952E0F85C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "setupConstraints()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F08255BC-DB0A-4E75-80D3-B982915A553B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewApp/Root/StockDetail/Detail ViewControllet/StockDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "backButtonWasTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

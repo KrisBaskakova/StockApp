@@ -9,8 +9,9 @@ import Foundation
 
 final class NetworkService {
   
+  static let shared = NetworkService()
+  
   func getStocks() -> [StockModel] {
-    
     /*
      request...
      */

@@ -10,9 +10,10 @@ import UIKit
 class StockDetailViewController: UIViewController {
 
   
-  lazy var backButton = UIButton()
+  private lazy var backButton = UIButton()
   lazy var favouriteButton = UIButton()
   lazy var buyButton = UIButton()
+  private lazy var informationView = UIView()
   private lazy var stockNameLabel = UILabel()
   private lazy var companyNameLabel = UILabel()
   var details: [DetailsModel] = []
@@ -26,6 +27,7 @@ class StockDetailViewController: UIViewController {
     
     return detailsTypeColleactionView
   }()
+  
   let cellData: [StockDetail] = [
     .chart,
     .summary,
@@ -33,7 +35,6 @@ class StockDetailViewController: UIViewController {
     .ideas,
     .forecast,
   ]
-  
   
   init(stockModel: StockModel) {
     self.stockModel = stockModel
@@ -49,6 +50,8 @@ class StockDetailViewController: UIViewController {
     setupUI()
     buttonsAction()
     setCollectionViewDelegates()
+    stockNameLabel.backgroundColor = .red
+    companyNameLabel.backgroundColor = .red
     view.backgroundColor = .white
   }
   
@@ -91,6 +94,7 @@ class StockDetailViewController: UIViewController {
     view.addSubview(favouriteButton)
     view.addSubview(buyButton)
     view.addSubview(detailsTypeColleactionView)
+    view.addSubview(informationView)
   }
   
   //MARK: - Configuration
@@ -102,6 +106,7 @@ class StockDetailViewController: UIViewController {
     setupStockNameLabelConfiguration()
     setupCompanyNameLabelConfiguration()
   }
+  
   
   private func setupStockNameLabelConfiguration(){
     stockNameLabel.text = stockModel.name
@@ -143,6 +148,15 @@ class StockDetailViewController: UIViewController {
     setupBuyButtonConstraints()
     setupCompanyNameLabelConstraints()
     setupDetailsTypeStackViewConstraints()
+    setupSummaruViewConstraints()
+  }
+  
+  private func setupSummaruViewConstraints() {
+    informationView.translatesAutoresizingMaskIntoConstraints = false
+    informationView.topAnchor.constraint(equalTo: detailsTypeColleactionView.bottomAnchor, constant: 20).isActive = true
+    informationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+    informationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+    informationView.bottomAnchor.constraint(equalTo: buyButton.topAnchor, constant: -16).isActive = true
   }
 
   private func setupStockNameLabelConstraints(){
@@ -196,9 +210,9 @@ class StockDetailViewController: UIViewController {
 
 extension StockDetailViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
   
-//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    return CGSize(width: collectionView.bounds.width - 50, height: 40)
-//  }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width: collectionView.bounds.width / 4, height: 40)
+    }
   
   
   
@@ -208,16 +222,28 @@ extension StockDetailViewController: UICollectionViewDelegateFlowLayout, UIColle
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsTypeColleactionView", for: indexPath) as! DetailCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsTypeColleactionView", for: indexPath) as! DetailCollectionViewCell
     
     cell.configure(with: cellData[indexPath.row])
     cell.backgroundColor = .cyan
     cell.layer.borderWidth = 1
+  
     
-        return cell
+    switch indexPath.row {
+    case 0:
+      informationView.backgroundColor = .gray
+    case 1:
+      informationView.backgroundColor = .green
+    case 2:
+      informationView.backgroundColor = .blue
+    case 3:
+      informationView.backgroundColor = .red
+    case 4:
+      informationView.backgroundColor = .brown
+    default:
+      UICollectionViewCell()
+    }
     
+    return cell
   }
-  
-  
-  
 }
